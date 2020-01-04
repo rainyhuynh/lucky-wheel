@@ -1,0 +1,15 @@
+
+<div class="text-right">
+    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#setting"><i class="fa fa-wrench"></i> Setting</button>
+    <%= link_to "Reset data", destroys_path, method: :delete, class: "btn btn-danger btn-sm" %>
+</div>
+
+<div class="text-center image">
+    <img src="/images/lucky_wheel.png">
+</div>
+
+<div class="text-center start-btn">
+    <button class="btn btn-success start" >Start</button>
+</div>
+
+<%= render "setting_modal" %>
