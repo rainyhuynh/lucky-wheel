@@ -3,8 +3,12 @@
     <strong><%= @random_number %></strong>
 </h1>
 
-
+<div class="text-center">
+    <audio id="result-audio" src="/audios/result.mp3" autoplay controls hidden>
+        <p>Your browser does not support HTML5 audio playback</p>
+    </audio>
+</div>
 
 <div class="text-center start-btn">
-    <%= link_to "Back", root_path, class: "btn btn-primary" %>
+    <%= link_to "Back", root_path, class: "btn btn-primary home-path" %>
 </div>

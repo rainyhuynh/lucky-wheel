@@ -9,16 +9,18 @@
           <h4 class="modal-title"><i class="fa fa-wrench" aria-hidden="true"></i> Settings</h4>
         </div>
         <div class="modal-body">
-           <div class="form-group">
-              <label>Number of options </label>
-              <input name="number" type="number" value="200" class="form-control">
-          </div>
+          <%= form_with url: update_number_of_option_path, method: :post do |f| %>
+            <div class="form-group">
+                <label>Number of options </label>
+                <%= f.number_field :number, class: 'form-control', value: @number_of_options || 200 %>
+            </div>
 
-          <div class="checkbox">
-            <label><input type="checkbox"> Background music</label>
-          </div>
-
+            <div>
+              <%= f.submit "Save", class: "btn btn-primary", id: "save" %>
+            </div>
+          <% end %>
         </div>
+        
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>

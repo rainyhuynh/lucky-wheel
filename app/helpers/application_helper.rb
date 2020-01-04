@@ -14,6 +14,11 @@ module ApplicationHelper
     def read_data_random
         data = File.read(lucky_file).split
     end
+    
+    def write_number_of_option(number)
+        path = Rails.root.join("app/datas/number_of_options.txt")
+        File.write(path, number) 
+    end
 
     def write_data_random(number)
         value = number.to_s + " "

@@ -10,6 +10,15 @@
 
 <div class="text-center start-btn">
     <button class="btn btn-success start" >Start</button>
+
+    <p>
+       <a href="#" class="lucky-wheel-numbers">Hide lucky wheel numbers :</a><br>
+       <span><%= @lucked_wheel_datas %></span>
+    </p>
+
+    <audio id="playaudio" src="/audios/start_game.mp3" controls loop hidden>
+        <p>Your browser does not support HTML5 audio playback</p>
+    </audio>
 </div>
 
 <%= render "setting_modal" %>
