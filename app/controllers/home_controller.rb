@@ -33,6 +33,9 @@ class HomeController < ApplicationController
   def update_number_of_option
     number = params["number"].to_i
     write_number_of_option(number)
+
+    #clear all data
+    clear_file_data
   end
 
 end
