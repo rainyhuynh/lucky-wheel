@@ -14,7 +14,7 @@ class HomeController < ApplicationController
 
     lucky_datas = read_data_random
 
-    if lucky_datas.include? random_number || random_number == 0 || random_number < 0
+    if lucky_datas.include? random_number.to_s || random_number == 0 || random_number < 0
       random_number = rand(number_of_options)
     else
       write_data_random(random_number)
