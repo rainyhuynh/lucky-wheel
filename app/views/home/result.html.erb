@@ -1,6 +1,11 @@
 <h1 class="result">
-    This is result....
-    <strong><%= @random_number %></strong>
+    <% if @random_number.to_i > 0 %>
+        This is result....
+        <strong><%= @random_number %></strong>
+    <% else %>
+        Out of range....
+        <strong>The end!</strong>
+    <% end %>
 </h1>
 
 <div class="text-center">

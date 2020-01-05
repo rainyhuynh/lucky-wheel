@@ -1,10 +1,10 @@
 module ApplicationHelper
-    def read_data_general
-        data = File.read(Rails.root.join("app/datas/number_of_options.txt")).split
-        number_of_options = data[0]
-        background_music = data[1]
+    def number_of_option
+        data = File.read(Rails.root.join("app/datas/number_of_options.txt"))
+    end
 
-        return number_of_options
+    def number_of_list
+        data = File.read(Rails.root.join("app/datas/numbers_list.txt")).split
     end
 
     def lucky_file
@@ -17,7 +17,27 @@ module ApplicationHelper
     
     def write_number_of_option(number)
         path = Rails.root.join("app/datas/number_of_options.txt")
-        File.write(path, number) 
+        File.write(path, number.to_s) 
+
+        path_number_list = Rails.root.join("app/datas/numbers_list.txt")
+        
+        numbers = ''
+        number.times do |num|
+            numbers += (num + 1).to_s + " "
+        end
+
+        File.write(path_number_list, numbers) 
+    end
+
+    def write_number_of_list(numbers)
+        path_number_list = Rails.root.join("app/datas/numbers_list.txt")
+        
+        list = ''
+        numbers.each do |num|
+            list += num.to_s + " "
+        end
+
+        File.write(path_number_list, list) 
     end
 
     def write_data_random(number)
